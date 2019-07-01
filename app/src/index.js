@@ -44,7 +44,11 @@ const App = {
     const { lookUptokenIdToStarInfo } = this.meta.methods;
     const id = document.getElementById("lookId").value;
     const startName = await lookUptokenIdToStarInfo(id).call();
-    alert("the star name is : " + startName);
+    if(startName) {
+      alert("the star name is : " + startName);
+    } else {
+      alert("No star found");
+    }
   }
 
 };

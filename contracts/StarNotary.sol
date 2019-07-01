@@ -70,6 +70,8 @@ contract StarNotary is ERC721 {
         assert(bytes(tokenIdToStarInfo[_tokenId1].name).length != 0);
         assert(bytes(tokenIdToStarInfo[_tokenId2].name).length != 0);
 
+        require(this.ownerOf(_tokenId1) == msg.sender || this.ownerOf(_tokenId2) == msg.sender);
+
         address add1 = this.ownerOf(_tokenId1);
         address add2 = this.ownerOf(_tokenId2);
 
